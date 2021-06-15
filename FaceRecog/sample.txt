@@ -1,0 +1,20 @@
+image = cv2.imread('known_faces_dir\Obama\obama1.jpg')
+Obama = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+image = cv2.imread('known_faces_dir\Dad\Dad.jpeg')
+Dad = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+image = cv2.imread('known_faces_dir\Mum\Mum.jpg')
+Mum = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+#Create Face encodings
+face_obama_encodings = face_recognition.face_encodings(Obama)[0]
+face_dad_encodings = face_recognition.face_encodings(Dad)[0]
+face_mum_encodings = face_recognition.face_encodings(Mum)[0]
+
+#Known face database
+known_face_encodings = [
+    face_kaushik_encodings,
+    face_papa_encodings,
+    face_mummy_encodings,
+]
